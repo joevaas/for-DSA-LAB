@@ -1,0 +1,126 @@
+Aim:
+To write a python program to implement the binary search tree.
+Procedure:
+1.Initially create new node and declare it as root. 
+2.While inserting a new node, if the value of the new data is less than the value of the current node, we will add it to the left child of the binary search tree, otherwise, we will add it to the right child.
+Program:
+class BinaryTreeNode:
+  def __init__(self, data):
+    self.data = data
+    self.leftChild = None
+    self.rightChild=None
+     
+def insert(root,newValue):
+    #if binary search tree is empty, make a new node and declare it as root
+    if root is None:
+        root=BinaryTreeNode(newValue)
+        return root
+    #binary search tree is not empty, so we will insert it into the tree
+    #if newValue is less than value of data in root, add it to left subtree and proceed recursively
+    if newValue<root.data:
+        root.leftChild=insert(root.leftChild,newValue)
+    else:
+        #if newValue is greater than value of data in root, add it to right subtree and proceed recursively
+        root.rightChild=insert(root.rightChild,newValue)
+    return root
+ 
+root= insert(None,15)
+insert(root,10)
+insert(root,25)
+insert(root,6)
+insert(root,14)
+insert(root,20)
+insert(root,60)
+a1=root
+a2=a1.leftChild
+a3=a1.rightChild
+a4=a2.leftChild
+a5=a2.rightChild
+a6=a3.leftChild
+a7=a3.rightChild
+print("Root Node is:")
+print(a1.data)
+print("left child of node is:")
+print(a1.leftChild.data)
+print("right child of node is:")
+print(a1.rightChild.data)
+print("Node is:")
+print(a2.data)
+print("left child of node is:")
+print(a2.leftChild.data)
+print("right child of node is:")
+print(a2.rightChild.data)
+print("Node is:")
+print(a3.data)
+print("left child of node is:")
+print(a3.leftChild.data)
+print("right child of node is:")
+print(a3.rightChild.data)
+print("Node is:")
+print(a4.data)
+print("left child of node is:")
+print(a4.leftChild)
+print("right child of node is:")
+print(a4.rightChild)
+print("Node is:")
+print(a5.data)
+print("left child of node is:")
+print(a5.leftChild)
+print("right child of node is:")
+print(a5.rightChild)
+print("Node is:")
+print(a6.data)
+print("left child of node is:")
+print(a6.leftChild)
+print("right child of node is:")
+print(a6.rightChild)
+print("Node is:")
+print(a7.data)
+print("left child of node is:")
+print(a7.leftChild)
+print("right child of node is:")
+print(a7.rightChild)
+
+Output:
+Root Node is:
+15
+left child of node is:
+10
+right child of node is:
+25
+Node is:
+10
+left child of node is:
+6
+right child of node is:
+14
+Node is:
+25
+left child of node is:
+20
+right child of node is:
+60
+Node is:
+6
+left child of node is:
+None
+right child of node is:
+None
+Node is:
+14
+left child of node is:
+None
+right child of node is:
+None
+Node is:
+20
+left child of node is:
+None
+right child of node is:
+None
+Node is:
+60
+left child of node is:
+None
+right child of node is:
+None
